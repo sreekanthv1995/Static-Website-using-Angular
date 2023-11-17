@@ -8,15 +8,22 @@ import { Component, EventEmitter, Output } from '@angular/core';
 export class SearchComponent {
 
   searchText:string = '';
+
   @Output()
   searchTextChange: EventEmitter<string> = new EventEmitter<string>();
 
   onSearchChangeEvent(){
-    this.searchTextChange.emit(this.searchText)
+    
   }
 
-  updateSearchText(event:any){
-    this.searchText = event.target.value
+  // updateSearchText(event:any){
+  //   this.searchText = event.target.value
+  // }
+
+  updateSearchText(inputEL: HTMLInputElement){
+    // console.log(inputEL.value);
+    this.searchText = inputEL.value;
+    this.searchTextChange.emit(this.searchText);
   }
 
 }
