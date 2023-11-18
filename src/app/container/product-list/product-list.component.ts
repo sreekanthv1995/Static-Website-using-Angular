@@ -547,11 +547,7 @@ export class ProductListComponent {
     this.selectedRadioBtn = event;
     
   }
-
+  
   @Input()
   searchtext='';
-
-  
-
-
 }
